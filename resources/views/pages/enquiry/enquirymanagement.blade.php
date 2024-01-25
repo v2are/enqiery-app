@@ -85,8 +85,8 @@
                                     <input name="invisible" type="hidden" name="hiddenid" value="{{$value->id}}">
 
                                         <div class="d-flex px-3 py-1 justify-content-center align-items-center">
-                                        <a href="/enquiryedit/{{$value->id}}"> <i style='font-size:24px' class='far'>&#xf044;</i> </a>
-                                        &nbsp;&nbsp;&nbsp;<a href="/delete/{{$value->id}}" onclick="return confirm('Are you sure you want to DELETE?')"> <i class="fa fa-trash-o" style="font-size:24px;color:red"></i>
+                                        <a href="{{ route('enquiryupdate', $value->id) }}"> <i style='font-size:24px' class='far'>&#xf044;</i> </a>
+                                        &nbsp;&nbsp;&nbsp;<a href="{{ route('enquirydelete', $value->id) }}" onclick="return confirm('Are you sure you want to DELETE?')"> <i class="fa fa-trash-o" style="font-size:24px;color:red"></i>
 
 
                                                 </a>

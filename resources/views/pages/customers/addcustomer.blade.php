@@ -84,7 +84,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="example-text-input" class="form-control-label">Email</label>
-                                        <input class="form-control datepicker"  id="" type="text" name="gender" value="" required>
+                                        <input class="form-control"   type="text" name="email" value="" required>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -114,7 +114,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                     <label for="example-text-input" class="form-control-label">Gender </label>
-                                    <select class="form-control" data-toggle="select" title="Simple select" data-live-search="true" data-live-search-placeholder="Search ..." name="enquiry_source" required>
+                                    <select class="form-control" data-toggle="select" title="Simple select" name="gender" data-live-search="true" data-live-search-placeholder="Search ..." name="enquiry_source" required>
                                     <option>Choose Gender</option>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>   
@@ -155,7 +155,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                     <label for="example-text-input" class="form-control-label">Country </label>
-                                    <select class="form-control" data-toggle="select" title="Simple select" data-live-search="true" data-live-search-placeholder="Search ..." name="enquiry_source" required>
+                                    <select class="form-control" data-toggle="select" title="Simple select" name="country" data-live-search="true" data-live-search-placeholder="Search ..." name="enquiry_source" required>
                                     <option>Choose Country</option>
                                     @foreach($country as $countryvalue)
                                         <option value="{{$countryvalue->id}}">{{$countryvalue->name}}</option>

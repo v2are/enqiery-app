@@ -74,7 +74,7 @@ class EnquiryController extends Controller
 
     }
 
-    public function customerupdate(Request $request,$id){
+    public function update(Request $request,$id){
 
         $validation = Validator::make($request->all(),
         [

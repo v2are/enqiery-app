@@ -111,7 +111,7 @@ class CustomerController extends Controller
         $customer->mobile=$request->mobile;
 
         $customer->phone=$request->phone;
-        $customer->email	=$request->email;
+        $customer->email=$request->email;
 
         $customer->address=$request->address;
         $customer->city=$request->city;

@@ -26,8 +26,8 @@ Route::post('/getenquirydetails',[EnquiryController::class, 'getenquirydetails']
 //Route::post('/enquiryedit/{id}',[EnquiryController::class, 'enquiryedit']);
 Route::get('/enquiryedit/{id}',[EnquiryController::class, 'enquiryedit']);
 
-Route::put('/update/{id}',[EnquiryController::class, 'update']);
-Route::get('/delete/{id}',[EnquiryController::class, 'destroy']);
+Route::put('/update/{id}',[EnquiryController::class, 'update'])->name('enquiryupdate');
+Route::get('/delete/{id}',[EnquiryController::class, 'destroy'])->name('enquirydelete');
 
 Route::get('/customer',[CustomerController::class, 'index']);
 Route::get('/addcustomer',[CustomerController::class, 'customeradd']);
@@ -35,8 +35,8 @@ Route::post('/getcustomerdetails',[CustomerController::class, 'getcustomerdetail
 //Route::post('/enquiryedit/{id}',[EnquiryController::class, 'enquiryedit']);
 Route::get('/customeredit/{id}',[CustomerController::class, 'customeredit']);
 
-Route::put('/customerupdate/{id}',[CustomerController::class, 'update']);
-Route::get('/customerdelete/{id}',[CustomerController::class, 'destroy']);
+Route::put('/customerupdate/{id}',[CustomerController::class, 'update'])->name('cutomerupdate');
+Route::get('/customerdelete/{id}',[CustomerController::class, 'destroy'])->name('customerdelete');
 
 
 use App\Http\Controllers\HomeController;
