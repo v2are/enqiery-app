@@ -36,7 +36,7 @@ Route::post('/getcustomerdetails',[CustomerController::class, 'getcustomerdetail
 Route::get('/customeredit/{id}',[CustomerController::class, 'customeredit']);
 
 Route::put('/customerupdate/{id}',[CustomerController::class, 'update']);
-Route::get('/delete/{id}',[CustomerController::class, 'destroy']);
+Route::get('/customerdelete/{id}',[CustomerController::class, 'destroy']);
 
 
 use App\Http\Controllers\HomeController;
