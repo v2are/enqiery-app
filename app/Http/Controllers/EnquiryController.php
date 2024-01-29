@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Enquiry;
 use App\Models\Enquirysource;
+use DateTime;
 use Validator;
 
 class EnquiryController extends Controller
@@ -52,7 +53,9 @@ class EnquiryController extends Controller
 
         $enquiry->no_of_night=$request->no_of_night;
 
-        $enquiry->tour_date=$request->tour_date;
+        $dateObject = DateTime::createFromFormat('m/d/Y', $request->tour_date);
+        $formattedDate = $dateObject->format('Y-m-d');
+        $enquiry->tour_date=$formattedDate;
         $enquiry->infant	=$request->infant	;
 
         $enquiry->budget=$request->budget;
@@ -74,8 +77,8 @@ class EnquiryController extends Controller
 
     }
 
-    public function update(Request $request,$id){
-
+    public function update(Request $request){
+        //dd($request);
         $validation = Validator::make($request->all(),
         [
             'title'=>'required',
@@ -91,7 +94,7 @@ class EnquiryController extends Controller
             //'submit_by'=>'required',
         ]);
   
-        $enquiry = Enquiry::where('id',$id)->first();
+        $enquiry = Enquiry::where('id',$request->rowid)->first();
 
         $enquiry->title=$request->title;
         $enquiry->name	=$request->name_enquiry;

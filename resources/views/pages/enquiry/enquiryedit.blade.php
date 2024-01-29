@@ -57,9 +57,10 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="card">
-                    <form role="form" method="POST" action="/update/{{$enquiry->id}}" enctype="multipart/form-data">
+                    <form role="form" method="POST" action="{{route('enquiryupdate')}}" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
+                        <input type="hidden" name="rowid" value="{{$enquiry->id}}">
                         <!--<div class="card-header pb-0">
                             <div class="d-flex align-items-center">
                                 <p class="mb-0">Edit Enquiry Details</p>

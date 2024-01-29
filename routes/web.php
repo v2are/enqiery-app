@@ -24,9 +24,9 @@ Route::get('/enquiry',[EnquiryController::class, 'index']);
 Route::get('/addenquiry',[EnquiryController::class, 'enquiryadd']);
 Route::post('/getenquirydetails',[EnquiryController::class, 'getenquirydetails']);
 //Route::post('/enquiryedit/{id}',[EnquiryController::class, 'enquiryedit']);
-Route::get('/enquiryedit/{id}',[EnquiryController::class, 'enquiryedit']);
+Route::get('/enquiryedit/{id}',[EnquiryController::class, 'enquiryedit'])->name('enquiryedit');
 
-Route::put('/update/{id}',[EnquiryController::class, 'update'])->name('enquiryupdate');
+Route::put('/update',[EnquiryController::class, 'update'])->name('enquiryupdate');
 Route::get('/delete/{id}',[EnquiryController::class, 'destroy'])->name('enquirydelete');
 
 Route::get('/customer',[CustomerController::class, 'index']);
