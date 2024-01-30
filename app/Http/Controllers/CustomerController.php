@@ -76,8 +76,7 @@ class CustomerController extends Controller
         
     }
 
-    public function update(Request $request,$id){
-
+    public function customerupdate(Request $request,$id){
         $validation = Validator::make($request->all(),
         [
             'title'=>'required',
@@ -97,8 +96,10 @@ class CustomerController extends Controller
       
         // "<pre>";print_r($request->name_enquiry);exit;
         $customer = Customer::where('id',$id)->first();
+        //$customer = Customer::where('id',$request->rowid)->first();
         //echo print_r($customer);exit;
         $customer->title=$request->title;
+
 
         $customer->first_name=$request->first_name;
 

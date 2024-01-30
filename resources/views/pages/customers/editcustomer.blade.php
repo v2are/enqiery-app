@@ -57,7 +57,7 @@
         <div class="row"> 
             <div class="col-md-8">
                 <div class="card">
-                    <form role="form" method="POST" action="/customerupdate/{{$customer->id}}" enctype="multipart/form-data">
+                    <form role="form" method="POST" action=  "{{ route('customerupdate', $customer->id) }}" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="card-body">

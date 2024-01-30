@@ -33,9 +33,9 @@ Route::get('/customer',[CustomerController::class, 'index']);
 Route::get('/addcustomer',[CustomerController::class, 'customeradd']);
 Route::post('/getcustomerdetails',[CustomerController::class, 'getcustomerdetails']);
 //Route::post('/enquiryedit/{id}',[EnquiryController::class, 'enquiryedit']);
-Route::get('/customeredit/{id}',[CustomerController::class, 'customeredit']);
+Route::get('/customeredit/{id}',[CustomerController::class, 'customeredit'])->name('customeredit');
 
-Route::put('/customerupdate/{id}',[CustomerController::class, 'update'])->name('cutomerupdate');
+Route::put('/customerupdate/{id}',[CustomerController::class, 'customerupdate'])->name('customerupdate');
 Route::get('/customerdelete/{id}',[CustomerController::class, 'destroy'])->name('customerdelete');
 
 
