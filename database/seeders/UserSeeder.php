@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Country;
+use App\Models\City;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -19,7 +20,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         
-        Country::truncate();
+       /* Country::truncate();
   
         $countries = [
             ['name' => 'Afghanistan', 'code' => 'AF'],
@@ -277,5 +278,44 @@ class UserSeeder extends Seeder
             Country::create($value);
         }
 
+    }*/
+    City::truncate();
+    $cities=[
+        ['name'=>'Ariyalur'],
+        ['name'=>'Chennai'],
+        ['name'=>'Coimbatore'],
+        ['name'=>'Cuddalore'],
+        ['name'=>'Dharmapuri'],
+        ['name'=>'Dindigul'],
+        ['name'=>'Erode'],
+        ['name'=>'Kanchipuram'],
+        ['name'=>'Kanyakumari'],
+        ['name'=>'Karur'],
+        ['name'=>'Madurai'],
+        ['name'=>'Nagapattinam'],
+        ['name'=>'Nilgiris'],
+        ['name'=>'Namakkal'],
+        ['name'=>'Perambalur'],
+        ['name'=>'Pudukkottai'],
+        ['name'=>'Ramanathapuram'],
+        ['name'=>'Salem'],
+        ['name'=>'Sivaganga'],
+        ['name'=>'Tirupur'],
+        ['name'=>'Tiruchirappalli'],
+        ['name'=>'Theni'],
+        ['name'=>'Tirunelveli'],
+        ['name'=>'Thanjavur'],
+        ['name'=>'Thoothukudi'],
+        ['name'=>'Tiruvallur'],
+        ['name'=>'Tiruvarur'],
+        ['name'=>'Tiruvannamalai'],
+        ['name'=>'Vellore'],
+        ['name'=>'Viluppuram'],
+        ['name'=>'Virudhunagar'],
+    ];
+    foreach ($cities as $key => $value) {
+        cities::create($value);
     }
+}
+
 }

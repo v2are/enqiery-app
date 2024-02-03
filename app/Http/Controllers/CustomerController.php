@@ -6,21 +6,36 @@ use Illuminate\Http\Request;
 use App\Models\Customer;
 use App\Models\Enquirysource;
 use App\Models\Country;
-
+use App\Models\City;
+use App\Models\State;
 use Validator;
+use Response;
+use Redirect;
 
 class CustomerController extends Controller
 {
     public function index(){
-
-        $customer = Customer::all(); 
+     $customer = Customer::all(); 
         return view('pages.customers.viewcustomer',compact('customer'));
 
     }
-    public function customeradd(){
-    $country = Country::all(['id', 'name']); 
-    return view('pages.customers.addcustomer',compact('country'));
 
+    public function customeradd(){
+    $data['countries'] = Country::get(["name","id"]);
+    return view('pages.customers.addcustomer',$data);
+    }
+
+    public function getState(Request $request)
+    {  
+        $data['states'] = State::where("country_id",$request->country_id)->get(["name","id"]);
+        return response()->json($data);
+    }
+
+    public function getCity(Request $request)
+    {
+        $data['cities'] = City::where("state_id",$request->state_id)
+                    ->get(["name","id"]);
+        return response()->json($data);
     }
 
     public function getcustomerdetails(Request $request){
@@ -71,9 +86,9 @@ class CustomerController extends Controller
 
     public function customeredit(Request $request,$id){
         $customer = Customer::where('id',$id)->first(); 
-       
-        return view('pages.customers.editcustomer', compact('customer'));
-        
+        $data['countries'] = Country::get(["name","id"]);
+         return view('pages.customers.editcustomer', compact('customer'),$data);
+
     }
 
     public function customerupdate(Request $request,$id){

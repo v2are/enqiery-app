@@ -2,7 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EnquiryController;   
-use App\Http\Controllers\CustomerController;           
+use App\Http\Controllers\CustomerController;  
+use App\Http\Controllers\DropDownController;           
+use App\Http\Controllers\CountryStateCityController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\ResetPassword;
+use App\Http\Controllers\ChangePassword;
 
 
 
@@ -39,13 +48,11 @@ Route::put('/customerupdate/{id}',[CustomerController::class, 'customerupdate'])
 Route::get('/customerdelete/{id}',[CustomerController::class, 'destroy'])->name('customerdelete');
 
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\PageController;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\UserProfileController;
-use App\Http\Controllers\ResetPassword;
-use App\Http\Controllers\ChangePassword;            
+//dropdown contrystatecity
+Route::get('country-state-city', [CustomerController::class, 'customeradd']);
+Route::post('get-states-by-country', [CustomerController::class, 'getState'])->name('get-states-by-country');
+Route::post('get-cities-by-state', [CustomerController::class, 'getCity']);
+            
             
 
 Route::get('/', function () {return redirect('/dashboard');})->middleware('auth');

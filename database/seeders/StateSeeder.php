@@ -4,10 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Country;
 
-
-class CitySeeder extends Seeder
+class StateSeeder extends Seeder
 {
     /**
      * Run the database seeds.

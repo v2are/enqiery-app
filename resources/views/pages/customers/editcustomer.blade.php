@@ -115,33 +115,56 @@
                                     <div class="form-group">
                                         <label for="example-text-input" class="form-control-label">Address</label>
                                         <input class="form-control" type="textarea" name="address" value="{{ old('address',$customer->address) }}" required>
-                                    </div>
+                                 </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="example-text-input" class="form-control-label">City</label>
-                                        <input class="form-control" type="text" name="city" value="{{ old('city',$customer->city) }}" required>
+                                    <label for="example-text-input" class="form-control-label">Country </label>
+                                    <select class="form-control" data-toggle="select" title="Simple select" id="country-dropdown" name="country" required>
+                                    <option>Choose Country</option>
+                                    @isset($countries)
+                                    @foreach($countries as $country)
+                                        <option value="{{$country->id}}">{{$country->name}}</option>
+                                        @endforeach
+                                     @endisset   
+                                    </select>
+                                </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                    <label for="example-text-input" class="form-control-label">State </label>
+                                    <select class="form-control" data-toggle="select" title="Simple select" name="state" id="state-dropdown" required>
+                                    <option>Choose State</option>
+                                    @isset($states)
+                                    @foreach($states as $statesvalue)
+                                        <option value="{{statesvalue->name}}">{{$statesvalue->name}}</option>
+                                        @endforeach
+                                    @endisset
+                                    </select> 
                                     </div>
-                                </div>  
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                    <label for="example-text-input" class="form-control-label">City </label>
+                                    <select class="form-control" data-toggle="select" title="Simple select" id="city-dropdown" name="city"required>
+                                    <option>Choose Cities</option>
+                                    @isset($cities)
+                                    @foreach($cities as $citiesvalue)
+                                        <option value="{{$citiesvalue->id}}">{{$citiesvalue->name}}</option>
+                                        @endforeach
+                                    @endisset
+                                        
+                                    </select>
+                                        
+                                    </div>
+                                </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="example-text-input" class="form-control-label">Pincode</label>
                                         <input class="form-control" type="text" name="pincode" value="{{ old('pincode',$customer->pincode) }}" required>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="example-text-input" class="form-control-label">State</label>
-                                        <input class="form-control" type="text" name="state" value="{{ old('state',$customer->state) }}" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="example-text-input" class="form-control-label">Country</label>
-                                        <input class="form-control" type="text" name="country" value="{{ old('country',$customer->country) }}" required>
-                                    </div>
-                                </div>
-                              
                             
                                 <div class="">
                             <div class="d-flex align-items-center">
@@ -195,64 +218,7 @@
                     </form>
                 </div>
             </div>
-            <!--<div class="col-md-4">
-                <div class="card card-profile">
-                    <img src="/img/bg-profile.jpg" alt="Image placeholder" class="card-img-top">-->
-                    <!--<div class="row justify-content-center">
-                        <div class="col-4 col-lg-4 order-lg-2">
-                            <div class="mt-n4 mt-lg-n6 mb-4 mb-lg-0">
-                                <a href="javascript:;">
-                                    <img src="/img/team-2.jpg"
-                                        class="rounded-circle img-fluid border border-2 border-white">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-header text-center border-0 pt-0 pt-lg-2 pb-4 pb-lg-3">
-                        <div class="d-flex justify-content-between">
-                            a href="javascript:;" class="btn btn-sm btn-info mb-0 d-none d-lg-block">Connect</a>
-                            <a href="javascript:;" class="btn btn-sm btn-info mb-0 d-block d-lg-none"><i
-                                    class="ni ni-collection"></i></a>
-                            <a href="javascript:;"
-                                class="btn btn-sm btn-dark float-right mb-0 d-none d-lg-block">Message</a>
-                            <a href="javascript:;" class="btn btn-sm btn-dark float-right mb-0 d-block d-lg-none"><i
-                                    class="ni ni-email-83"></i></a>
-                        </div>
-                    </div>-->
-                  <!-- <div class="card-body pt-0">
-                        <div class="row">
-                            <div class="col">
-                                <div class="d-flex justify-content-center">
-                                    <div class="d-grid text-center">
-                                        <span class="text-lg font-weight-bolder">22</span>
-                                        <span class="text-sm opacity-8">Adults</span>
-                                    </div>
-                                    <div class="d-grid text-center mx-4">
-                                        <span class="text-lg font-weight-bolder">10</span>
-                                        <span class="text-sm opacity-8">Child</span>
-                                    </div>
-                                    <div class="d-grid text-center">
-                                        <span class="text-lg font-weight-bolder">89</span>
-                                        <span class="text-sm opacity-8">Infant</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-center mt-4">
-                            <h5>
-                            Title<span class="font-weight-light">, 35</span>
-                            </h5>
-                            <div class="h6 font-weight-300">
-                                <i class="ni location_pin mr-2"></i>Enquiry Source
-                            </div>
-                            <div class="h6 mt-4">
-                                <i class="ni business_briefcase-24 mr-2"></i>Enquiry Status
-                            </div>
-                            <div>
-                                <i class="ni education_hat mr-2"></i>SubmitedBy
-                            </div>
-                        </div>
-                    </div>-->
+          
                 </div>
             </div>
         </div>
